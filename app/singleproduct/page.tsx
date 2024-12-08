@@ -5,7 +5,7 @@ import Header from '@/app/components/Header';
 import Footer from '@/app/components/footer';
 import React from 'react';
 import Image from 'next/image';
-// Image
+
 const ProductPage = () => {
   const [quantity, setQuantity] = useState(1);
   const [selectedSize, setSelectedSize] = useState<string | null>('L');
@@ -17,10 +17,9 @@ const ProductPage = () => {
 
   return (
     <div className="bg-gray-50 min-h-screen">
-       <Header/>
+      <Header />
       {/* Breadcrumb */}
       <header className="container mx-auto px-4 py-6">
-        
         <nav className="text-sm text-gray-600">
           <a href="/" className="hover:underline">Home</a> / <a href="/shop" className="hover:underline">Shop</a> / Asgaard Sofa
         </nav>
@@ -43,9 +42,7 @@ const ProductPage = () => {
           <h1 className="text-2xl font-bold mb-2">Asgaard Sofa</h1>
           <p className="text-gray-600 mb-4">Rs. 250,000.00</p>
           <div className="flex items-center space-x-2 mb-4">
-            <div className="flex text-yellow-500">
-              ★★★★★
-            </div>
+            <div className="flex text-yellow-500">★★★★★</div>
             <span className="text-sm text-gray-600">(5 Customer Reviews)</span>
           </div>
           <p className="text-gray-700 mb-4">
@@ -61,9 +58,7 @@ const ProductPage = () => {
                 <button
                   key={size}
                   onClick={() => setSelectedSize(size)}
-                  className={`px-4 py-2 border rounded-md ${
-                    selectedSize === size ? 'bg-black text-white' : 'bg-gray-200'
-                  }`}
+                  className={`px-4 py-2 border rounded-md ${selectedSize === size ? 'bg-black text-white' : 'bg-gray-200'}`}
                 >
                   {size}
                 </button>
@@ -79,9 +74,7 @@ const ProductPage = () => {
                 <button
                   key={color}
                   onClick={() => setSelectedColor(color)}
-                  className={`w-8 h-8 rounded-full border ${
-                    selectedColor === color ? 'ring-2 ring-black' : 'bg-gray-200'
-                  }`}
+                  className={`w-8 h-8 rounded-full border ${selectedColor === color ? 'ring-2 ring-black' : 'bg-gray-200'}`}
                   style={{ backgroundColor: color.toLowerCase() }}
                 />
               ))}
@@ -148,7 +141,7 @@ const ProductPage = () => {
           {['Trenton Modular Sofa', 'Dining Table', 'Outdoor Bar Table', 'Console Table'].map(
             (product, idx) => (
               <div key={idx} className="border p-4 rounded-md">
-                <image src={`/path-to-product${idx + 1}.jpg`} width={300} height={300} alt={product} className="w-full rounded-md mb-2" />
+                <img src={`/path-to-product${idx + 1}.jpg`} width={300} height={300} alt="product" className="w-full rounded-md mb-2" />
                 <h3 className="text-sm">{product}</h3>
                 <p className="text-sm text-gray-600">Rs. 25,000.00</p>
               </div>
@@ -158,9 +151,8 @@ const ProductPage = () => {
       </div>
 
       {/* Footer */}
-    <Footer/>
+      <Footer />
     </div>
-    
   );
 };
 
